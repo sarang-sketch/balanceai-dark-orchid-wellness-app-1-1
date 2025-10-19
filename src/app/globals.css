@@ -1,0 +1,198 @@
+/* Updated: 2025-10-19T12:19:58.774Z */
+/* Updated: 2025-10-19T11:44:19.690Z */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-orchid: var(--orchid);
+  --color-orchid-muted: var(--orchid-muted);
+  --color-orchid-neon: var(--orchid-neon);
+  --color-orchid-glow: var(--orchid-glow);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 8px);
+}
+
+:root {
+  --radius: 1rem;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Light mode (fallback) */
+  --background: #f5f5f5;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --primary: #8B5A8B;
+  --primary-foreground: #ffffff;
+  --secondary: #C71585;
+  --secondary-foreground: #ffffff;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --accent: #8B5A8B;
+  --accent-foreground: #ffffff;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #C71585;
+  --orchid: #8B5A8B;
+  --orchid-muted: #8B5A8B;
+  --orchid-neon: #C71585;
+  --orchid-glow: rgba(199, 21, 133, 0.5);
+}
+
+.dark {
+  /* Dark Orchid Theme */
+  --background: #000000;
+  --foreground: #f5f5f5;
+  --card: rgba(20, 20, 20, 0.8);
+  --card-foreground: #f5f5f5;
+  --primary: #8B5A8B;
+  --primary-foreground: #ffffff;
+  --secondary: #C71585;
+  --secondary-foreground: #ffffff;
+  --muted: rgba(40, 40, 40, 0.6);
+  --muted-foreground: #a3a3a3;
+  --accent: #C71585;
+  --accent-foreground: #ffffff;
+  --border: rgba(139, 90, 139, 0.2);
+  --input: rgba(139, 90, 139, 0.15);
+  --ring: #C71585;
+  --orchid: #8B5A8B;
+  --orchid-muted: #8B5A8B;
+  --orchid-neon: #C71585;
+  --orchid-glow: rgba(199, 21, 133, 0.5);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+  
+  /* Glassmorphism card styles */
+  .glass-card {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(139, 90, 139, 0.3);
+    box-shadow: 0 8px 32px rgba(199, 21, 133, 0.1);
+  }
+  
+  /* Neon glow effects */
+  .neon-glow {
+    box-shadow: 0 0 20px var(--color-orchid-glow);
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 10px var(--color-orchid-glow), 0 0 20px var(--color-orchid-glow);
+  }
+  
+  /* Neon border animation */
+  @keyframes neon-pulse {
+    0%, 100% {
+      box-shadow: 0 0 10px var(--color-orchid-glow), 0 0 20px var(--color-orchid-glow);
+    }
+    50% {
+      box-shadow: 0 0 20px var(--color-orchid-neon), 0 0 40px var(--color-orchid-glow);
+    }
+  }
+  
+  .neon-pulse {
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+  
+  /* Particle background animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+      transform: translateY(-10px) translateX(-10px);
+    }
+    75% {
+      transform: translateY(-30px) translateX(5px);
+    }
+  }
+  
+  .floating-particle {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Fade in up animation for quiz options */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Fade in animation for modals */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-orchid-muted);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orchid-neon);
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
