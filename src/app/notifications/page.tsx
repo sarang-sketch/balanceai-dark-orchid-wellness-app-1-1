@@ -170,8 +170,9 @@ export default function NotificationsPage() {
   const unreadCount = notifications.filter(n => !n.read).length;
 
   return (
-    <div className="relative min-h-screen bg-black">
-      <main className="relative z-10 container mx-auto px-6 py-12 max-w-4xl pb-24">
+    <SwipeNavigation>
+      <div className="relative min-h-screen bg-black">
+        <main className="relative z-10 container mx-auto px-6 py-12 max-w-4xl pb-24">
         {/* Header */}
         <div className="flex items-center justify-between mb-12">
           <div>
