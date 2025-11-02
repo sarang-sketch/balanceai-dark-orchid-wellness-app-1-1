@@ -10,195 +10,117 @@ interface Question {
   id: number;
   question: string;
   options: Array<{ label: string; value: string; score: number }>;
-  category: "physical" | "digital" | "cognitive" | "emotional";
 }
 
 const questions: Question[] = [
   {
     id: 1,
-    question: "How many hours do you sleep on average per night?",
-    category: "physical",
+    question: "How often do you feel mentally sharp and focused during tasks?",
     options: [
-      { label: "Less than 5 hours", value: "A", score: 1 },
-      { label: "5-6 hours", value: "B", score: 2 },
-      { label: "7-8 hours", value: "C", score: 4 },
-      { label: "More than 9 hours", value: "D", score: 3 }
+      { label: "Always", value: "A", score: 5 },
+      { label: "Often", value: "B", score: 4 },
+      { label: "Sometimes", value: "C", score: 3 },
+      { label: "Rarely", value: "D", score: 2 },
+      { label: "Never", value: "E", score: 1 }
     ]
   },
   {
     id: 2,
-    question: "How often do you exercise or engage in physical activity?",
-    category: "physical",
+    question: "How frequently do you experience difficulty remembering recent events?",
     options: [
-      { label: "Never", value: "A", score: 1 },
-      { label: "1-2 times per week", value: "B", score: 2 },
-      { label: "3-4 times per week", value: "C", score: 4 },
-      { label: "5+ times per week", value: "D", score: 5 }
+      { label: "Never", value: "A", score: 5 },
+      { label: "Rarely", value: "B", score: 4 },
+      { label: "Sometimes", value: "C", score: 3 },
+      { label: "Often", value: "D", score: 2 },
+      { label: "Always", value: "E", score: 1 }
     ]
   },
   {
     id: 3,
-    question: "How would you describe your eating habits?",
-    category: "physical",
+    question: "How would you rate your ability to concentrate for extended periods?",
     options: [
-      { label: "Irregular, mostly junk food", value: "A", score: 1 },
-      { label: "Somewhat balanced but inconsistent", value: "B", score: 2 },
-      { label: "Balanced with occasional treats", value: "C", score: 4 },
-      { label: "Very healthy and consistent", value: "D", score: 5 }
+      { label: "Excellent", value: "A", score: 5 },
+      { label: "Good", value: "B", score: 4 },
+      { label: "Average", value: "C", score: 3 },
+      { label: "Poor", value: "D", score: 2 },
+      { label: "Very Poor", value: "E", score: 1 }
     ]
   },
   {
     id: 4,
-    question: "How many hours a day do you spend on your phone or digital devices?",
-    category: "digital",
+    question: "How often do you feel overwhelmed by daily responsibilities?",
     options: [
-      { label: "Less than 2 hours", value: "A", score: 5 },
-      { label: "2-4 hours", value: "B", score: 4 },
-      { label: "5-7 hours", value: "C", score: 2 },
-      { label: "More than 8 hours", value: "D", score: 1 }
+      { label: "Never", value: "A", score: 5 },
+      { label: "Rarely", value: "B", score: 4 },
+      { label: "Sometimes", value: "C", score: 3 },
+      { label: "Often", value: "D", score: 2 },
+      { label: "Always", value: "E", score: 1 }
     ]
   },
   {
     id: 5,
-    question: "How often do you check social media?",
-    category: "digital",
+    question: "How frequently do you engage in activities that challenge your brain (e.g., puzzles, learning)?",
     options: [
-      { label: "Rarely or never", value: "A", score: 5 },
-      { label: "A few times per day", value: "B", score: 4 },
-      { label: "Every hour", value: "C", score: 2 },
-      { label: "Constantly throughout the day", value: "D", score: 1 }
+      { label: "Daily", value: "A", score: 5 },
+      { label: "Weekly", value: "B", score: 4 },
+      { label: "Monthly", value: "C", score: 3 },
+      { label: "Rarely", value: "D", score: 2 },
+      { label: "Never", value: "E", score: 1 }
     ]
   },
   {
     id: 6,
-    question: "Do you take breaks from screens during the day?",
-    category: "digital",
+    question: "How well do you manage stress during challenging situations?",
     options: [
-      { label: "Yes, regularly scheduled breaks", value: "A", score: 5 },
-      { label: "Sometimes, when I remember", value: "B", score: 3 },
-      { label: "Rarely", value: "C", score: 2 },
-      { label: "Never, I'm always on screens", value: "D", score: 1 }
+      { label: "Very Well", value: "A", score: 5 },
+      { label: "Well", value: "B", score: 4 },
+      { label: "Moderately", value: "C", score: 3 },
+      { label: "Poorly", value: "D", score: 2 },
+      { label: "Not at All", value: "E", score: 1 }
     ]
   },
   {
     id: 7,
-    question: "How often do you feel stressed or overwhelmed?",
-    category: "emotional",
+    question: "How often do you feel mentally fatigued or drained?",
     options: [
-      { label: "Rarely or never", value: "A", score: 5 },
-      { label: "Occasionally", value: "B", score: 4 },
-      { label: "Often", value: "C", score: 2 },
-      { label: "Almost always", value: "D", score: 1 }
+      { label: "Never", value: "A", score: 5 },
+      { label: "Rarely", value: "B", score: 4 },
+      { label: "Sometimes", value: "C", score: 3 },
+      { label: "Often", value: "D", score: 2 },
+      { label: "Always", value: "E", score: 1 }
     ]
   },
   {
     id: 8,
-    question: "How would you describe your mood most of the time?",
-    category: "emotional",
+    question: "How would you describe your overall mood most days?",
     options: [
-      { label: "Happy and energetic", value: "A", score: 5 },
-      { label: "Content and stable", value: "B", score: 4 },
-      { label: "Neutral or fluctuating", value: "C", score: 3 },
-      { label: "Sad or anxious", value: "D", score: 1 }
+      { label: "Very Positive", value: "A", score: 5 },
+      { label: "Positive", value: "B", score: 4 },
+      { label: "Neutral", value: "C", score: 3 },
+      { label: "Negative", value: "D", score: 2 },
+      { label: "Very Negative", value: "E", score: 1 }
     ]
   },
   {
     id: 9,
-    question: "Do you have a support system (friends, family, community)?",
-    category: "emotional",
+    question: "How frequently do you practice mindfulness or relaxation techniques?",
     options: [
-      { label: "Yes, a strong support network", value: "A", score: 5 },
-      { label: "Yes, but limited", value: "B", score: 3 },
-      { label: "Not really", value: "C", score: 2 },
-      { label: "No, I feel isolated", value: "D", score: 1 }
+      { label: "Daily", value: "A", score: 5 },
+      { label: "Weekly", value: "B", score: 4 },
+      { label: "Monthly", value: "C", score: 3 },
+      { label: "Rarely", value: "D", score: 2 },
+      { label: "Never", value: "E", score: 1 }
     ]
   },
   {
     id: 10,
-    question: "Have you experienced thoughts of self-harm or suicide?",
-    category: "emotional",
+    question: "Have you experienced thoughts of self-harm or hopelessness in the past month?",
     options: [
-      { label: "No, never", value: "A", score: 5 },
-      { label: "Rarely, fleeting thoughts", value: "B", score: 2 },
+      { label: "Never", value: "A", score: 5 },
+      { label: "Rarely", value: "B", score: 2 },
       { label: "Sometimes", value: "C", score: 1 },
-      { label: "Yes, frequently", value: "D", score: 0 }
-    ]
-  },
-  {
-    id: 11,
-    question: "How easily can you concentrate on tasks?",
-    category: "cognitive",
-    options: [
-      { label: "Very easily, I stay focused", value: "A", score: 5 },
-      { label: "Moderately well", value: "B", score: 4 },
-      { label: "I get distracted often", value: "C", score: 2 },
-      { label: "I can barely focus", value: "D", score: 1 }
-    ]
-  },
-  {
-    id: 12,
-    question: "How often do you forget important tasks or information?",
-    category: "cognitive",
-    options: [
-      { label: "Rarely", value: "A", score: 5 },
-      { label: "Occasionally", value: "B", score: 4 },
-      { label: "Often", value: "C", score: 2 },
-      { label: "Very frequently", value: "D", score: 1 }
-    ]
-  },
-  {
-    id: 13,
-    question: "Do you engage in activities that challenge your brain (puzzles, reading, learning)?",
-    category: "cognitive",
-    options: [
-      { label: "Daily", value: "A", score: 5 },
-      { label: "A few times per week", value: "B", score: 4 },
-      { label: "Occasionally", value: "C", score: 2 },
-      { label: "Rarely or never", value: "D", score: 1 }
-    ]
-  },
-  {
-    id: 14,
-    question: "How would you rate your decision-making abilities?",
-    category: "cognitive",
-    options: [
-      { label: "Excellent, I make clear decisions", value: "A", score: 5 },
-      { label: "Good, with some hesitation", value: "B", score: 4 },
-      { label: "Difficult, I often second-guess", value: "C", score: 2 },
-      { label: "Very poor, I struggle to decide", value: "D", score: 1 }
-    ]
-  },
-  {
-    id: 15,
-    question: "How often do you practice mindfulness or meditation?",
-    category: "cognitive",
-    options: [
-      { label: "Daily", value: "A", score: 5 },
-      { label: "A few times per week", value: "B", score: 4 },
-      { label: "Occasionally", value: "C", score: 2 },
-      { label: "Never", value: "D", score: 1 }
-    ]
-  },
-  {
-    id: 16,
-    question: "How well do you handle setbacks or failures?",
-    category: "emotional",
-    options: [
-      { label: "I bounce back quickly", value: "A", score: 5 },
-      { label: "I recover with some time", value: "B", score: 4 },
-      { label: "It takes me a while", value: "C", score: 2 },
-      { label: "I struggle to recover", value: "D", score: 1 }
-    ]
-  },
-  {
-    id: 17,
-    question: "Do you have clear goals and a sense of purpose?",
-    category: "cognitive",
-    options: [
-      { label: "Yes, very clear goals", value: "A", score: 5 },
-      { label: "Somewhat clear", value: "B", score: 4 },
-      { label: "Vague or uncertain", value: "C", score: 2 },
-      { label: "No clear direction", value: "D", score: 1 }
+      { label: "Often", value: "D", score: 0 },
+      { label: "Always", value: "E", score: 0 }
     ]
   }
 ];
