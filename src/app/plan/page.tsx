@@ -30,7 +30,8 @@ export default function Plan() {
   const router = useRouter();
   const { data: session, isPending } = useSession();
   const [activeTab, setActiveTab] = useState("plan");
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; type: string } | null>(null);
+  const [show3DViewer, setShow3DViewer] = useState<string | null>(null);
   const [stats, setStats] = useState<any>(null);
   const [goals, setGoals] = useState<any[]>([]);
   const [reminders, setReminders] = useState<any[]>([]);
