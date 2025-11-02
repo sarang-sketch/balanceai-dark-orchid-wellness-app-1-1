@@ -281,6 +281,65 @@ export default function Quiz() {
           </button>
         </div>
       </div>
+
+      {/* Crisis Support Overlay */}
+      {showCrisisSupport && (
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-6">
+          <div className="bg-gradient-to-b from-orchid/10 to-black/80 border border-orchid/30 rounded-3xl p-8 max-w-md w-full glass-card">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-orchid/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Heart className="w-8 h-8 text-orchid-neon" />
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-4">
+                🖤 It's okay to need help.
+              </h3>
+
+              <p className="text-zinc-300 mb-8 leading-relaxed">
+                Your wellbeing matters. There are people who want to support you through this difficult time.
+              </p>
+
+              <div className="space-y-4 mb-8">
+                <a
+                  href="tel:988"
+                  className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-orchid-neon hover:bg-orchid-neon/90 text-white rounded-xl font-medium transition-all duration-200"
+                >
+                  <Phone className="w-5 h-5" />
+                  Call Crisis Line (988)
+                </a>
+
+                <a
+                  href="https://www.crisistextline.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full px-6 py-4 bg-zinc-900/50 border border-orchid/30 text-orchid-neon rounded-xl font-medium hover:border-orchid/50 transition-all duration-200"
+                >
+                  Text with a Counselor
+                </a>
+              </div>
+
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setShowCrisisSupport(false)}
+                  className="flex-1 px-6 py-3 bg-zinc-900/50 border border-zinc-800/50 text-white rounded-xl font-medium hover:border-orchid/50 transition-all duration-200"
+                >
+                  Continue Quiz
+                </button>
+                <button
+                  onClick={() => {
+                    // Save current results and redirect to gentle mode plan
+                    saveResults();
+                    router.push('/plan?mode=gentle');
+                  }}
+                  className="flex-1 px-6 py-3 bg-orchid/20 border border-orchid/30 text-orchid-neon rounded-xl font-medium hover:border-orchid/50 transition-all duration-200"
+                >
+                  Start Gentle Plan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
