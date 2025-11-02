@@ -157,6 +157,11 @@ export default function Quiz() {
   const handleAnswer = (option: string) => {
     setSelectedOption(option);
     setAnswers({ ...answers, [currentQuestion]: option });
+
+    // Check for crisis response on Question 10
+    if (currentQuestion === 9 && (option === 'B' || option === 'C' || option === 'D' || option === 'E')) {
+      setShowCrisisSupport(true);
+    }
   };
 
   const handleNext = () => {
