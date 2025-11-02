@@ -19,9 +19,11 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className="antialiased">
         <TopNav />
-        <div className="pt-16">
-          {children}
-        </div>
+        <SwipeNavigation enabled={true}>
+          <div className="pt-16">
+            {children}
+          </div>
+        </SwipeNavigation>
         <Toaster position="top-center" />
         <BottomNav />
       </body>
