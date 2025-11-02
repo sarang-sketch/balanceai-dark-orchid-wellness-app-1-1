@@ -322,6 +322,7 @@ export default function CommunityPage() {
           </p>
         </div>
       </main>
-    </div>
+      </div>
+    </SwipeNavigation>
   );
 }
