@@ -175,13 +175,26 @@ export default function Plan() {
                       </div>
                       <Activity className="w-6 h-6 text-orchid-neon" />
                     </div>
-                    <button
-                      onClick={() => setSelectedVideo(VIDEO_LIBRARY[exercise.video])}
-                      className="w-full px-4 py-2 bg-orchid-neon/10 hover:bg-orchid-neon/20 text-orchid-neon rounded-xl font-medium transition-all duration-200 flex items-center justify-center gap-2"
-                    >
-                      <Play className="w-4 h-4" />
-                      Watch Demo
-                    </button>
+                    <div className="space-y-3">
+                      <button
+                        onClick={() => setSelectedVideo({
+                          src: VIDEO_LIBRARY[exercise.video],
+                          title: exercise.name,
+                          type: exercise.video
+                        })}
+                        className="w-full px-4 py-2 bg-orchid-neon/10 hover:bg-orchid-neon/20 text-orchid-neon rounded-xl font-medium transition-all duration-200 flex items-center justify-center gap-2"
+                      >
+                        <Play className="w-4 h-4" />
+                        Watch Demo
+                      </button>
+                      <button
+                        onClick={() => setShow3DViewer(exercise.video)}
+                        className="w-full px-4 py-2 bg-zinc-800/50 hover:bg-zinc-800/70 border border-zinc-700/50 text-white rounded-xl font-medium transition-all duration-200 flex items-center justify-center gap-2"
+                      >
+                        <RotateCcw className="w-4 h-4" />
+                        View 3D Model
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>
