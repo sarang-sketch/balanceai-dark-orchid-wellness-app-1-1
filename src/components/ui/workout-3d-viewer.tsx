@@ -4,6 +4,7 @@ import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Environment, PerspectiveCamera, useGLTF } from "@react-three/drei";
 import { RotateCcw, ZoomIn, ZoomOut, Move3d, Play, Pause } from "lucide-react";
+import * as THREE from "three";
 
 interface Workout3DViewerProps {
   exerciseType: "yoga" | "core" | "meditation" | "stretch";
