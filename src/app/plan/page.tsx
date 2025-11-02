@@ -3,10 +3,10 @@
 import { useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { 
-  Clock, 
-  Calendar, 
-  Bell, 
+import {
+  Clock,
+  Calendar,
+  Bell,
   Play,
   Target,
   Activity,
@@ -15,6 +15,8 @@ import {
   X
 } from "lucide-react";
 import { toast } from "sonner";
+import EnhancedVideoPlayer from "@/components/ui/enhanced-video-player";
+import Workout3DViewer from "@/components/ui/workout-3d-viewer";
 
 // Video library
 const VIDEO_LIBRARY: Record<string, string> = {
