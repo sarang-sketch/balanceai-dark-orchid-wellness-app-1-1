@@ -1,17 +1,25 @@
 "use client";
 
-import { 
+import {
   Bell,
   CheckCircle2,
   Clock,
   Heart,
   TrendingUp,
-  Loader2
+  Loader2,
+  Phone,
+  Calendar,
+  Settings,
+  Plus,
+  Volume2,
+  VolumeX,
+  Zap
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { authClient, useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import SwipeNavigation from "@/components/ui/swipe-navigation";
 
 interface Notification {
   id: string;
