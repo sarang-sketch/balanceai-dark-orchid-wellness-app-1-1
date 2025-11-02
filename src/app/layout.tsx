@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { BottomNav } from "@/components/ui/bottom-nav";
 import { TopNav } from "@/components/ui/top-nav";
+import SwipeNavigation from "@/components/ui/swipe-navigation";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
