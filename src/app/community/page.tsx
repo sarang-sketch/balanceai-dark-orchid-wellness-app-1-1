@@ -1,18 +1,30 @@
 "use client";
 
-import { 
+import {
   Users,
   Heart,
   MessageCircle,
   Share2,
   Send,
   Shield,
-  Loader2
+  Loader2,
+  Plus,
+  Search,
+  Filter,
+  Brain,
+  TrendingUp,
+  Award,
+  Calendar,
+  Eye,
+  EyeOff,
+  Flag,
+  MoreHorizontal
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { authClient, useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import SwipeNavigation from "@/components/ui/swipe-navigation";
 
 interface Post {
   id: string;
