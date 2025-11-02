@@ -131,6 +131,7 @@ export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [selectedOption, setSelectedOption] = useState<string>("");
+  const [showCrisisSupport, setShowCrisisSupport] = useState(false);
 
   useEffect(() => {
     if (!session) return;
