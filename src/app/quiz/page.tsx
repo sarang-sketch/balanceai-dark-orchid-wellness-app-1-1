@@ -220,13 +220,7 @@ export default function Quiz() {
           </div>
         </div>
 
-        {/* Category Badge */}
-        <div className="mb-6">
-          <span className="inline-block px-4 py-2 bg-orchid/10 border border-orchid/20 text-orchid-neon rounded-full text-sm font-medium">
-            {currentQ.category}
-          </span>
-        </div>
-
+        
         {/* Question */}
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 leading-tight">
           {currentQ.question}
