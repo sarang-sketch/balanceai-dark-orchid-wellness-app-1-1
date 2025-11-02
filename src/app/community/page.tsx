@@ -192,8 +192,9 @@ export default function CommunityPage() {
   }
 
   return (
-    <div className="relative min-h-screen bg-black">
-      <main className="relative z-10 container mx-auto px-6 py-12 max-w-4xl pb-24">
+    <SwipeNavigation>
+      <div className="relative min-h-screen bg-black">
+        <main className="relative z-10 container mx-auto px-6 py-12 max-w-4xl pb-24">
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
