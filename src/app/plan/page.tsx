@@ -353,24 +353,22 @@ export default function Plan() {
           </div>
         )}
 
-        {/* Video Modal */}
+        {/* Enhanced Video Player */}
         {selectedVideo && (
-          <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-6">
-            <div className="relative w-full max-w-4xl">
-              <button
-                onClick={() => setSelectedVideo(null)}
-                className="absolute -top-12 right-0 p-2 text-white hover:text-orchid-neon transition-colors"
-              >
-                <X className="w-6 h-6" />
-              </button>
-              <video
-                src={selectedVideo}
-                controls
-                autoPlay
-                className="w-full rounded-2xl"
-              />
-            </div>
-          </div>
+          <EnhancedVideoPlayer
+            src={selectedVideo.src}
+            title={selectedVideo.title}
+            onClose={() => setSelectedVideo(null)}
+            onShow3D={() => setShow3DViewer(selectedVideo.type)}
+          />
+        )}
+
+        {/* 3D Model Viewer */}
+        {show3DViewer && (
+          <Workout3DViewer
+            exerciseType={show3DViewer as "yoga" | "core" | "meditation" | "stretch"}
+            onClose={() => setShow3DViewer(null)}
+          />
         )}
       </div>
     </div>
