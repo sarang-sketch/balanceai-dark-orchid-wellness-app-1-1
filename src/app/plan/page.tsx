@@ -12,7 +12,8 @@ import {
   Activity,
   Droplet,
   Plus,
-  X
+  X,
+  RotateCcw
 } from "lucide-react";
 import { toast } from "sonner";
 import EnhancedVideoPlayer from "@/components/ui/enhanced-video-player";
