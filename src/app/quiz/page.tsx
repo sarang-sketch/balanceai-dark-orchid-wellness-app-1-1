@@ -3,7 +3,7 @@
 import { useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ChevronRight, CheckCircle2 } from "lucide-react";
+import { ChevronRight, CheckCircle2, Phone, Heart } from "lucide-react";
 import { toast } from "sonner";
 
 interface Question {
